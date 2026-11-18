@@ -1,0 +1,26 @@
+{
+  "query": "synaplan",
+  "total_results": 1,
+  "results": [
+    {
+      "score": 7.5,
+      "article": {
+        "article_id": "abc",
+        "url": "https://www.synaplan.com/",
+        "title": "Synaplan",
+        "published_at": "2026-09-01T00:00:00Z",
+        "summary": "Open-source AI knowledge platform."
+      },
+      "chunk": {
+        "chunk_id": "c1",
+        "chunk_index": 0,
+        "text": "Open-source AI knowledge platform."
+      },
+      "metadata": {
+        "domain": "synaplan.com",
+        "language": "english",
+        "country": "US"
+      }
+    }
+  ]
+}

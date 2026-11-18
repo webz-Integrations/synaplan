@@ -57,6 +57,7 @@ final class PlugBoundaryTest extends TestCase
             'use App\\Plug\\WebSearch\\Client\\ExaClient',
             'use App\\Plug\\WebSearch\\Client\\FirecrawlClient',
             'use App\\Plug\\WebSearch\\Client\\PerplexitySearchClient',
+            'use App\\Plug\\WebSearch\\Client\\WebzClient',
         ];
     }
 

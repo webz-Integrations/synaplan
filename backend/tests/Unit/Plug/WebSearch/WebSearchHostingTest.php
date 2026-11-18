@@ -18,6 +18,8 @@ final class WebSearchHostingTest extends TestCase
             $this->assertFalse(WebSearchHosting::selfHosted($provider), $provider);
             $this->assertSame('US', WebSearchHosting::country($provider), $provider);
         }
+        $this->assertFalse(WebSearchHosting::selfHosted('webz'));
+        $this->assertSame('IL', WebSearchHosting::country('webz'));
         $this->assertFalse(WebSearchHosting::selfHosted('unknown'));
     }
 

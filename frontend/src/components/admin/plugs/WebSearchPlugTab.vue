@@ -208,7 +208,7 @@ import {
 type ProviderCard = WebSearchStatus['providers'][number]
 type CapabilityKey = 'freshness' | 'country' | 'language' | 'siteFilter' | 'fullContent' | 'answer'
 
-const KEY_PROVIDERS = new Set(['tavily', 'exa', 'firecrawl', 'perplexity'])
+const KEY_PROVIDERS = new Set(['tavily', 'exa', 'firecrawl', 'perplexity', 'webz'])
 
 const { t } = useI18n()
 const { success, warning, error: showError } = useNotification()
@@ -354,6 +354,7 @@ function sovereigntyClass(value: string): string {
 function sovereigntyLabel(value: string): string {
   if (value === 'self-hosted') return t('aiInfra.webSearch.sovereignty.selfHosted')
   if (value === 'EU') return t('aiInfra.webSearch.sovereignty.eu')
-  return t('aiInfra.webSearch.sovereignty.usCloud')
+  if (value === 'US cloud') return t('aiInfra.webSearch.sovereignty.usCloud')
+  return value
 }
 </script>

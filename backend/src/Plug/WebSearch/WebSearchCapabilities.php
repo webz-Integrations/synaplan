@@ -91,6 +91,18 @@ final readonly class WebSearchCapabilities
         );
     }
 
+    public static function webz(): self
+    {
+        return new self(
+            freshness: true,
+            country: false,
+            language: true,
+            siteFilter: true,
+            fullContent: true,
+            answer: false,
+        );
+    }
+
     /**
      * @return array{freshness: bool, country: bool, language: bool, siteFilter: bool, fullContent: bool, answer: bool}
      */

@@ -319,4 +319,47 @@ describe('WebSearchPlugTab', () => {
     expect(success).toHaveBeenCalledWith('Key saved and verified. The next search can use it.')
     expect(showError).not.toHaveBeenCalled()
   })
+
+  it('shows a key field for Webz and does not label it as a US cloud', async () => {
+    getWebSearchStatus.mockResolvedValue({
+      providers: [
+        {
+          key: 'webz',
+          label: 'Webz.io News Search',
+          docsUrl: 'https://docs.webz.io/docs/webz/news-search-api',
+          sovereignty: 'Israel',
+          capabilities: {
+            ...noneCapabilities,
+            freshness: true,
+            language: true,
+            siteFilter: true,
+            fullContent: true,
+          },
+          health: { available: false, reason: 'Webz.io API token is not configured' },
+          keyStatus,
+        },
+      ],
+      active: 'webz',
+      fallback: '',
+      userOverrideAllowed: false,
+    })
+
+    const wrapper = mount(WebSearchPlugTab, {
+      global: {
+        stubs: {
+          Icon: true,
+        },
+      },
+    })
+    await flushPromises()
+
+    expect(wrapper.get('[data-testid="web-search-card-webz"]').text()).toContain(
+      'Webz.io News Search'
+    )
+    expect(wrapper.get('[data-testid="web-search-sovereignty-webz"]').text()).toContain('Israel')
+    expect(wrapper.get('[data-testid="web-search-sovereignty-webz"]').text()).not.toContain(
+      'US cloud'
+    )
+    expect(wrapper.find('[data-testid="web-search-key-webz"]').exists()).toBe(true)
+  })
 })

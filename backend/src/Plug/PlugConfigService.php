@@ -84,6 +84,7 @@ final readonly class PlugConfigService
         'exa',
         'firecrawl',
         'perplexity',
+        'webz',
     ];
 
     public const DEFAULT_RERANK_ENABLED = false;

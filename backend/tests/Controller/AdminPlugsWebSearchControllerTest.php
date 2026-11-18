@@ -51,6 +51,7 @@ final class AdminPlugsWebSearchControllerTest extends WebTestCase
         self::assertContains('exa', $keys);
         self::assertContains('firecrawl', $keys);
         self::assertContains('perplexity', $keys);
+        self::assertContains('webz', $keys);
     }
 
     public function testPutUnknownProviderReturns422(): void
